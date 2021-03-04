@@ -1,3 +1,5 @@
+# this is the program to merge files by multiplicating them into many.
+
 with open("files/nkaka2.txt","r") as cont:
     read=cont.read()
     with open("files/names.txt","r") as names:
