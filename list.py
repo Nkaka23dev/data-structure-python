@@ -57,7 +57,7 @@ def voting_system(nominee_1,nominee_2):
 
     voters=[1,2,3,4,5]
 
-    voters_size=len(voters_id)
+    voters_size=len(voters)
 
     while True:
         voter_id=int(input("Enter your ID number to vote: "))
@@ -71,14 +71,31 @@ def voting_system(nominee_1,nominee_2):
             vote=int(input("Enter a vote here: "))
             if vote==1:
                 nm1_votes+=1
+                print(f"You voted for {nominee_1}")
             elif vote==2:
                 nm2_votes+=1
+                print(f"You voted for {nominee_2}")
             else:
                 print("You entered a wrong key,Please try again.")
         else:
-            
-        
+            print("You have alread voted or you are not on the list.")
+        if voters==[]:
+            print("####################################")
+            print("Voting session is over now, below is the winner.")
+            print("####################################")
+            if nm1_votes>nm2_votes:
+                percent=(nm1_votes/voters_size)*100
+                print(f"{nominee_1} has won election with {percent}%")
+                break
+            elif nm2_votes>nm1_votes:
+                percent=(nm2_votes/voters_size)*100
+                print(f"{nominee_2} has won election with {percent}%")
+                break
+            else:
+                print("No winner,The two candidates got the same votes, Government will decide")
+                break
 
 nominee_1=input("Enter first nominee: ")
 nominee_2=input("Enter nominee two: ")
+voting_system(nominee_1,nominee_2)
 
