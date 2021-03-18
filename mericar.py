@@ -1,23 +1,22 @@
 
-# def findNumber(arr,k):
-#     if k<=0 or k>=10*5:
-#         raise ValueError("Not allowed")
-#     if len(arr)<=0 or len(arr)>=10*9:
-#         raise ValueError("index??")
-
-#     while k in arr:
-#        print("yes")
-#        break
-#     while k not in arr:
-#         print("No")
-#         break
+def findNumber(arr,k):
+    if k<=0 or k>=10*5:
+        raise ValueError("Not allowed")
+    if len(arr)<=0 or len(arr)>=10*9:
+        raise ValueError("index??")
+    while k in arr:
+       print("yes")
+       break
+    while k not in arr:
+        print("No")
+        break
             
         
 
-# arr=[1,3,4,5,7]
-# number=4
-# if __name__=='__main__':
-#     findNumber(arr,number)
+arr=[1,3,4,5,7]
+number=4
+if __name__=='__main__':
+    findNumber(arr,number)
 
 def oddNumbers(l, r):
     # Write your code here
