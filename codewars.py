@@ -12,15 +12,17 @@
 # for i in list(my_func):
 #     print(i)
 
-def bin_conv(n):
-    if n<=0:
-        return "Invalid"
-    num=list(bin(n).replace("0b",""))
-    count=0
-    for i in num:
-        if i=="1":
-            count+=1
-    return count
+# def bin_conv(n):
+#     if n<=0:
+#         return "Invalid"
+#     num=list(bin(n).replace("0b",""))
+#     count=0
+#     for i in num:
+#         if i=="1":
+#             count+=1
+#     return count
+# print(bin_conv(10))
 
 
-print(bin_conv(10))
+arr=[i for i in str(12344)]
+print(arr)
