@@ -14,9 +14,6 @@ game_board(just_display=False)
 game_board(player=1,row=2,column=1,just_display=True)
 
 
-
-
-
 # x=game_board
 # x()
 print("==============")
