@@ -20,7 +20,7 @@ game=[[0,0,0],
       [0,0,0]]
 
 # game_board(game,display=False)
-game_board(game_r,player=1,row=4,column=1,display=False)
+game_board(game_r,player=1,row=1,column=1,display=False)
 
 
 # x=game_board

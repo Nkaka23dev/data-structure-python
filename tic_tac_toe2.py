@@ -1,10 +1,10 @@
-game=[[1,3,1],
-      [3,1,4],
-      [3,2,1]]
+game=[[1,1,1],
+      [0,0,0],
+      [1,0,0]]
 
 # horizontal winner
 for row in game:
-    if row.count(row[0])==len(row):
+    if row.count(row[0])==len(row) and row[0]!=0:
         print("horizontal winner!")
 
 #vertical winner
@@ -13,23 +13,24 @@ for col in range(len(game)):
     for row in game:
         check.append(row[0])
 
-    if check.count(check[0])==len(check):
+    if check.count(check[0])==len(check) and check[0]!=0:
         print("Vertical winner")
+    break
 
 #diagonals winner
 diags=[]
 for i,row in enumerate(range(len(game))):
     diags.append(game[row][i])
 
-if diags.count(diags[0])==len(diags): 
-    print("Horizontal 1 winner.")
+if diags.count(diags[0])==len(diags) and diags[0]!=0: 
+    print("Diagonal 1 won.")
 
 diag=[]
 for i,row in enumerate(reversed(range(len(game)))):
     diag.append(game[row][i])
    
-if diag.count(diag[0])==len(diag):
-    print("Horizontal 2 winner")
+if diag.count(diag[0])==len(diag) and diag[0]!=0:
+    print("Diagonal 2 won")
 
  
 
