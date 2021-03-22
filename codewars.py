@@ -1,3 +1,59 @@
+def likes(names):
+    if len(names)==0:
+        return "no one likes this"
+    elif len(names)==1:
+        return f"{names[0]} likes this"
+    elif len(names)==2:
+        return f"{names[0].title()} and {names[1].title()} like this"
+    elif len(names)==3:
+        return f"{names[0].title()},{names[1].title()} and {names[2].title()} like this"
+    else:
+        return f"{names[0].title()},{names[1].title()} and {len(names)-2} others like this"
+    
+arr=["kettia","kwitonda","munyarukundo"]
+print(likes(arr))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # def count_bit(num):
 #     if num<=0:
 #         return "Invalid"
@@ -12,6 +68,7 @@
 # for i in list(my_func):
 #     print(i)
 
+# #a  function to return number of 1 present in an binary 
 # def bin_conv(n):
 #     if n<=0:
 #         return "Invalid"
@@ -24,5 +81,3 @@
 # print(bin_conv(10))
 
 
-arr=[i for i in str(12344)]
-print(arr)
