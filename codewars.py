@@ -1,17 +1,17 @@
-def likes(names):
-    if len(names)==0:
-        return "no one likes this"
-    elif len(names)==1:
-        return f"{names[0]} likes this"
-    elif len(names)==2:
-        return f"{names[0].title()} and {names[1].title()} like this"
-    elif len(names)==3:
-        return f"{names[0].title()},{names[1].title()} and {names[2].title()} like this"
-    else:
-        return f"{names[0].title()},{names[1].title()} and {len(names)-2} others like this"
+# def likes(names):
+#     if len(names)==0:
+#         return "no one likes this"
+#     elif len(names)==1:
+#         return f"{names[0]} likes this"
+#     elif len(names)==2:
+#         return f"{names[0].title()} and {names[1].title()} like this"
+#     elif len(names)==3:
+#         return f"{names[0].title()},{names[1].title()} and {names[2].title()} like this"
+#     else:
+#         return f"{names[0].title()},{names[1].title()} and {len(names)-2} others like this"
     
-arr=["kettia","kwitonda","munyarukundo"]
-print(likes(arr))
+# arr=["kettia","kwitonda","munyarukundo"]
+# print(likes(arr))
 
 
 
@@ -80,4 +80,14 @@ print(likes(arr))
 #     return count
 # print(bin_conv(10))
 
+
+#a  function to return number of 1 present in an binary 
+def bin_conv(n):
+    if n<=0:
+        return "Invalid"
+    num=list(bin(n).replace("0b",""))
+    new_num=num[-4]
+    return num,new_num
+
+print(bin_conv(10))
 

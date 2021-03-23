@@ -1,67 +1,69 @@
 class Node:
-    def __init__(self,data=None,nex=None):
+    def __init__(self,data=None,net=None):
         self.data=data
-        self.next=nex
+        self.next=net 
 
-class Linked_list:
+class LinkedList:
     def __init__(self):
         self.head=None
 
     def insert_at_beggining(self,data):
-        node=Node(data,self.head)
+        node=Node(data,net=self.head)
         self.head=node
 
     def insert_at_end(self,data):
-        node=Node(data,nex=None)
-        if self.head==None:
+        node=Node(data,net=None)
+        if self.head is None:
             self.head=node
-            return 
         cur=self.head
-        while cur.next:
+        while cur.next is not None:
             cur=cur.next
         cur.next=node
 
-    def list_size(self):
-        if self.head is None:
-            return "The linked List is empty."
+    def length(self):
+        if self.head==None:
+            print("The Linked List is empty")
         cur=self.head
         counter=0
-        while cur!=None:
+        while cur:
             counter+=1
             cur=cur.next
         return counter
 
+    # def insert_middle(self,data,index):
+    #     node=Node(data)
+    #     if self.head==None:
+    #         self.head=node
+    #         return 
+    #     if index<0 or index>self.length():
+    #         return "Not a valid index."
+    #     cur=self.head
+    #     while cur:
+
     def display(self):
-        if self.head==None:
+        if self.head is None:
             print("The linked list is empty.")
             return 
         cur=self.head
-        all_nodes=''
-        while cur:
-            all_nodes+=str(cur.data)+'---->'
-            cur=cur.next
-        return all_nodes
+        all_node=""
+        while cur is not None:
+            all_node+=str(cur.data)+"--->"
+            cur=cur.next 
+        return all_node 
 
-    
-ll=Linked_list()
-ll.insert_at_beggining(12)
-ll.insert_at_beggining(67)
-ll.insert_at_beggining(23)
-ll.insert_at_end(1000)
-ll.insert_at_end(657)
-ll.insert_at_beggining(1994)
-ll.insert_at_beggining(200000)
-x=ll.display()
-print(x)
-print(ll.list_size())
+ll=LinkedList()
+ll.insert_at_beggining(10)
+ll.insert_at_beggining(100)
+ll.insert_at_beggining(18000)
+ll.insert_at_end(23)
+ll.insert_at_end(5422)
+ll.insert_at_beggining(-1)
+print(ll.display())
+print(ll.length())
 
-# ll=Linked_list()
-# arr=[34,45,7]
-# for r in arr:
-#     ll.insert_at_beggining(r)
+        
 
-# x=ll.display()
-# print(x)
+
 
 
 
