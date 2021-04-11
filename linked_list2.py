@@ -22,19 +22,43 @@ class List:
         itr.next=node 
 
     def insert_middle(self,index,data):
-        if index<0 or index>=self.length():
-            print("This Invalid")
-        if index==0:
-            self.head=Node(data,self.head.next)
-        count=0
+        try:
+            if index<0 or index>=self.length():
+                print("This Invalid")
+            if index==0:
+                self.head=Node(data,self.head.next)
+            count=0
+            itr=self.head
+            while itr:
+                if count==index-1:
+                    itr.next=Node(data,itr.next)
+                count+=1
+                itr=itr.next
+        except Exception as e:
+            raise Exception("Error occured",e)
+    
+    def insert_after_value(self,value_insert_after,data):
+        # if self.head==None:
+        #     print("The linked list is empty.")
         itr=self.head
+        el=[]
         while itr:
-            if count==index-1:
+            if itr.data==value_insert_after:
                 itr.next=Node(data,itr.next)
-            count+=1
+            el.append(itr.data)
             itr=itr.next
+        if value_insert_after not in el and self.length()!=0:
+            print("This value does not exist.")
 
-
+    def remove_by_value(self,data):
+        itr=self.head
+        counter=0
+        while itr:
+            if itr.data==data:
+                self.delete(counter)
+            itr=itr.next
+            counter+=1
+            
     def delete(self,index):
         if index<0 or index>=self.length():
             print("Invalid index.")
@@ -48,7 +72,6 @@ class List:
                 break
             itr=itr.next
             count+=1
-
     def extend(self,many_data):
         for data in many_data:
             self.insert_end(data)
@@ -59,9 +82,8 @@ class List:
 
     def length(self):
         if self.head is None:
-            raise Exception("Your list is empty!")
+            print("Your list is empty!")
             return 
-
         itr=self.head
         count=0
         while itr:
@@ -86,14 +108,16 @@ ll=List()
 ll.insert_end(56)
 ll.insert_end(89)
 ll.insert_end(2)
-# ll.insert_begin(200)
-# ll.insert_begin(234)
-# ll.extend(['Nkaka','Christella','Yabebe','Piano'])
+ll.insert_begin(200)
+ll.insert_begin(234)
+ll.extend(['Nkaka','Christella','Yabebe','Piano'])
 # ll.clear()
 # ll.delete(1)
-ll.insert_middle(0,"Haa")
+ll.insert_middle(2,"Haa")
+ll.insert_after_value("Piano","it working now.")
+ll.remove_by_value(234)
 ll.display()
-print("The length of my list is: ",ll.length())
+# print("The length of my list is: ",ll.length())
 
 
         
