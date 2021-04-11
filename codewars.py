@@ -86,8 +86,8 @@ def bin_conv(n):
     if n<=0:
         return "Invalid"
     num=list(bin(n).replace("0b",""))
-    new_num=num[-4]
-    return num,new_num
+    # new_num=num[-4]
+    return num
 
 print(bin_conv(10))
 

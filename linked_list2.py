@@ -102,7 +102,6 @@ class List:
             itr=itr.next 
         print(my_list)
 
-    
 
 ll=List()
 ll.insert_end(56)
@@ -114,8 +113,10 @@ ll.extend(['Nkaka','Christella','Yabebe','Piano'])
 # ll.clear()
 # ll.delete(1)
 ll.insert_middle(2,"Haa")
-ll.insert_after_value("Piano","it working now.")
+ll.insert_after_value("Piano","Victor")
 ll.remove_by_value(234)
+ll.remove_by_value("Nkaka")
+ll.remove_by_value("Haa")
 ll.display()
 # print("The length of my list is: ",ll.length())
 
