@@ -23,43 +23,39 @@
 
 
 # def hash_func(key):
-#     key=key.casefold()
 #     h=0
 #     for char in key:
 #         h+=ord(char)
 #     return h%100 
 
-# print(hash_func("March 6"))
+# print(hash_func("nkaka"))
 
-class HashTable:
-    def __init__(self):
-        self.Max=100
-        self.arr=[None for i in range(self.Max)]
+# class HashTable:
+#     def __init__(self):
+#         self.Max=100
+#         self.arr=[None for i in range(self.Max)]
 
-    def hash_func(self,key):
-        key=key.casefold()
-        h=0
-        for char in key:
-            h+=ord(char)
-        return h%self.Max
+#     def hash_func(self,key):
+#         key=key.casefold()
+#         h=0
+#         for char in key:
+#             h+=ord(char)
+#         return h%self.Max
 
-    def __setitem__(self,key,value):
-        h=self.hash_func(key)
-        self.arr[h]=value 
-        return 
+#     def __setitem__(self,key,value):
+#         h=self.hash_func(key)
+#         self.arr[h]=value 
+#         return 
 
-    def __getitem__(self,key):
-        h=self.hash_func(key)
-        print(self.arr[h])
+#     def __getitem__(self,key):
+#         h=self.hash_func(key)
+#         print(self.arr[h])
 
-    def __delitem__(self,key):
-        h=self.hash_func(key)
-        self.arr[h]=None
+#     def __delitem__(self,key):
+#         h=self.hash_func(key)
+#         self.arr[h]=None
 
-
-
-
-t=HashTable()
+# t=HashTable()
 # t["march 6"]="Nkaka"
 # t["march 10"]=100
 # t["march 9"]=8975
@@ -68,4 +64,48 @@ t=HashTable()
 # del t["March 28"]
 # t["march 28"]
 
-print(t.hash_func("march 6"))
+# print(t.hash_func("march 6"))
+
+
+class Hash_table:
+    def __init__(self):
+        self.Max=100
+        self.arr=[[] for i in range(self.Max)]
+
+    def hash_keys(self,key):
+        key=key.lower()
+        h=0
+        for char in key:
+            h+=ord(char)
+        return h%self.Max
+
+    def __setitem__(self,key,value):
+        ha=self.hash_keys(key)
+        found=False
+        for idx,element in enumerate(self.arr[ha]):
+            if len(element)==2 and element[0]==key:
+                self.arr[ha][idx]=(key,value)
+                found=True
+                break
+        if not found:
+            self.arr[ha].append((key,value))
+        
+    def __getitem__(self,key):
+        h=self.hash_keys(key)
+        return self.arr[h]
+
+    def __delitem__(self,key):
+        h=self.hash_keys(key)
+        self.arr[h]=None
+
+
+ht=Hash_table()
+ht["nkaka"]="Never again genocide"
+ht["nkaka"]="Yes I got updated now"
+ht["march 6march 6"]="Hello my people"
+# ht["march 6march 6"]=1746463
+# del ht["content"]
+print(ht.arr)
+
+
+

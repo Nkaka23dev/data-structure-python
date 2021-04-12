@@ -64,10 +64,6 @@ print(s.peek())
 
 
 
-
-
-
-
 # stack.append("https://nkaka.netlify.com")
 # stack.append("www.kigaliToday.com")
 # stack.append("www.igihe.com")
