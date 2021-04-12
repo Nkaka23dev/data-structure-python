@@ -92,11 +92,17 @@ class Hash_table:
         
     def __getitem__(self,key):
         h=self.hash_keys(key)
-        return self.arr[h]
+        for element in self.arr[h]:
+            if element[0]==key:
+                return element[1]
 
     def __delitem__(self,key):
         h=self.hash_keys(key)
-        self.arr[h]=None
+        found=False
+        for idx,element in enumerate(self.arr[h]):
+            if element[0]==key:
+                del self.arr[h][idx]
+              
 
 
 ht=Hash_table()
@@ -104,7 +110,8 @@ ht["nkaka"]="Never again genocide"
 ht["nkaka"]="Yes I got updated now"
 ht["march 6march 6"]="Hello my people"
 # ht["march 6march 6"]=1746463
-# del ht["content"]
+del ht["nkaka"]
+
 print(ht.arr)
 
 
