@@ -56,7 +56,7 @@ def game_map(game_board,player=0,row=0,column=0,just_display=False):
     except Exception as e:
        print("Error Occured! Try again Please.",e)
        return game_board,False
-
+     
 play=True
 players=[1,2]
 
@@ -83,7 +83,7 @@ while play:
                 print("=====================")
                 print("Game Over")
                 print("======================")
-                cont=input("Do you want to continue the game(y/n): ")
+                cont=input("Do you want to continue the game(y/n): ") 
                 if cont.casefold()=='y':
                     print("^^^^^^^^^^^^^^^^^^^^^^^^")
                     print("Restarting the game......")
