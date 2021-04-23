@@ -7,7 +7,7 @@ def calc_square(numbers):
     for num in numbers:
         new_numbers.append(num*num)
     end=time.time()
-    print("cal_square took "+str((end-start)*1000)+" mill sec")
+    print({f"cal_square took {(end-start)*1000} mill sec"})
     return new_numbers
 
 def calc_cube(numbers):
