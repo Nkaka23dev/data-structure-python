@@ -52,8 +52,6 @@
 
 
 
-
-
 # def count_bit(num):
 #     if num<=0:
 #         return "Invalid"
