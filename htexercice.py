@@ -64,21 +64,68 @@
 # print("The maximum tempearture is: ",max(new_arr))
 '''The best data structure of this problem is List '''
 
-arr=[]
-arr2=[]
-with open('files/weather2.csv','r') as line:
-    for l in line:
-        tokens=l.split(',')
-        day=tokens[0]
-        temp=int(tokens[1])
-        arr.append(day)
-        arr2.append(temp)
+# arr=[]
+# arr2=[]
+# with open('files/weather2.csv','r') as line:
+#     for l in line:
+#         tokens=l.split(',')
+#         day=tokens[0]
+#         temp=int(tokens[1])
+#         arr.append(day)
+#         arr2.append(temp)
 
 
-d={day:temp for day,temp in zip(arr,arr2)}
-print(d['Jan-09'])
-print(d['Jan-04'])
-'''The best data structure here is dictinary'''
+# d={day:temp for day,temp in zip(arr,arr2)}
+# print(d['Jan-09'])
+# print(d['Jan-04'])
+# '''The best data structure here is dictinary'''
+
+# word_count = {}
+# with open("files/poem.txt","r") as f:
+#     for line in f:
+#         tokens = line.split(' ')
+#         for token in tokens:
+#             token=token.replace('\n','')
+#             if token in word_count:
+#                 word_count[token]+=1
+#             else:
+#                 word_count[token]=1
+
+# print(word_count)
+
+
+class HashTable:
+    def __init__(self):
+        self.Max=100
+        self.arr=[[] for i in range(self.Max)]
+
+    def hash_f(self,key):
+        key=key.casefold()
+        h=0
+        for char in key:
+            h+=ord(char)
+        return h%self.Max
+
+    def __setitem__(self,key,value):
+        ha=self.hash_f(key)
+        found=False
+        if len(self.arr[ha])==2 and self.arr[ha][0]==key:
+            self.arr[ha]=(key,value)
+            found=True
+
+        if not found:
+            self.arr[ha].append((key,value))
+
+
+h=HashTable()
+h["Nkaka"]=1000
+# h["Nkaka"]=40536
+print(h.arr)
+print(h.hash_f("Nkaka"))
+
+
+
+
     
 
      
