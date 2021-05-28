@@ -49,9 +49,6 @@ class Linked_list:
 
 
 
-
-
-
 ll=Linked_list()
 ll.add_begin("Nkaka")
 ll.add_begin(543)
