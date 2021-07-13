@@ -1,4 +1,4 @@
-def merge_sort(elements,key):
+def merge_sort(elements,key) -> object:
     if len(elements)<=1:
         return 
     mid=len(elements)//2 
@@ -6,8 +6,8 @@ def merge_sort(elements,key):
     left=elements[:mid]
     right=elements[mid:] 
 
-    merge_sort(left,key) 
-    merge_sort(right,key) 
+    merge_sort(left,key)
+    merge_sort(right,key)
     return merge_two_arr(left,right,elements,key)
 
 

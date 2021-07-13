@@ -1,5 +1,11 @@
-if __name__=='__main__':
-    arr=[21,38,29,17,4,25,11,32,9] 
-    # print(len(arr)) 
-    for i in range(3,len(arr)):
-        print(arr[i])
+'''Find the sum of number between 1 to 5'''
+
+
+def sum_of_number(n):
+    if n == 1:
+        return 1
+    return n + sum_of_number(n - 1)
+
+
+if __name__ == '__main__':
+    print(sum_of_number(100))
